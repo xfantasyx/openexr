@@ -230,7 +230,7 @@ include(CMakePackageConfigHelpers)
 if(OPENEXR_INSTALL)
 configure_package_config_file(${PROJECT_NAME}Config.cmake.in
   ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
-  INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+  INSTALL_DESTINATION cmake
 )
 write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake"
   VERSION ${PROJECT_VERSION}
@@ -239,11 +239,11 @@ write_basic_package_version_file("${PROJECT_NAME}ConfigVersion.cmake"
 
 install(FILES ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake
               ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+  DESTINATION cmake
 )
 
 install(EXPORT ${PROJECT_NAME}
-  DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
+  DESTINATION cmake
   FILE ${PROJECT_NAME}Targets.cmake
   NAMESPACE ${PROJECT_NAME}::
   EXPORT_LINK_INTERFACE_LIBRARIES
